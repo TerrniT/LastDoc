@@ -1,11 +1,5 @@
-import {Flex} from "@chakra-ui/react"
+import { Flex } from "@chakra-ui/react";
 
 export default function App() {
-  return (
-    <Flex h="100vh">
-
-    </Flex>
-  
-  )
+	return <Flex h='100vh'></Flex>;
 }
-
