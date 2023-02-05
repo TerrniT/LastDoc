@@ -1,7 +1,7 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex } from '@chakra-ui/react'
 
 const Sidebar = () => {
-	return <Flex></Flex>;
-};
+  return <Flex></Flex>
+}
 
-export default Sidebar;
+export default Sidebar
