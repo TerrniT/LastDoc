@@ -1,7 +1,5 @@
-import { Flex } from "@chakra-ui/react";
-
 const Content = () => {
-	return <Flex></Flex>
-};
+  return <div>Content</div>
+}
 
-export default Content;
+export default Content
