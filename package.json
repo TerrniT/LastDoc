@@ -11,12 +11,7 @@
     "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "pre-commit": "lint-staged",
-    "prepare": "husky install",
-    "lint-staged": {
-      "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-        "prettier --write"
-      ]
-    }
+    "prepare": "husky install"
   },
   "dependencies": {
     "class-variance-authority": "^0.4.0",
