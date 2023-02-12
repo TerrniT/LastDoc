@@ -1,358 +1,180 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { User } from "lucide-react";
+import { BsArrowRight } from "react-icons/bs";
+import { AiOutlineHome } from "react-icons/ai";
+import SidebarOption from "./atoms/SidebarOption";
+
+const options = [
+	{
+		title: "Dashboard",
+		icon: AiOutlineHome,
+		active: true,
+	},
+	{
+		title: "Popular",
+	},
+	{
+		title: "Most Upvoted",
+	},
+	{
+		title: "Best Discussions",
+	},
+	{
+		title: "Search",
+	},
+];
+
+const footerOptions = [
+	{
+		title: "Docs",
+	},
+	{
+		title: "Changelog",
+	},
+	{
+		title: "Feedback",
+	},
+	{
+		title: "Invite people",
+	},
+];
 
 const Sidebar = () => {
-	return (
-		<div className='flex items-center justify-center w-screen h-screen p-10 space-x-6 '>
-			<div className='flex flex-col items-center w-16 h-full overflow-hidden text-gray-400 bg-gray-900 rounded'>
-				<a className='flex items-center justify-center mt-3' href='#'>
-					<svg
-						className='w-8 h-8 fill-current'
-						xmlns='http://www.w3.org/2000/svg'
-						viewBox='0 0 20 20'
-						fill='currentColor'
-					>
-						<path d='M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z' />
-					</svg>
-				</a>
-				<div className='flex flex-col items-center mt-3 border-t border-gray-700'>
-					<a
-						className='flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-						href='#'
-					>
-						<svg
-							className='w-6 h-6 stroke-current'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'
-						>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
-							/>
-						</svg>
-					</a>
-					<a
-						className='flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-						href='#'
-					>
-						<svg
-							className='w-6 h-6 stroke-current'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'
-						>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
-							/>
-						</svg>
-					</a>
-					<a
-						className='flex items-center justify-center w-12 h-12 mt-2 text-gray-200 bg-gray-700 rounded'
-						href='#'
-					>
-						<svg
-							className='w-6 h-6 stroke-current'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'
-						>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'
-							/>
-						</svg>
-					</a>
-					<a
-						className='flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-						href='#'
-					>
-						<svg
-							className='w-6 h-6 stroke-current'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'
-						>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'
-							/>
-						</svg>
-					</a>
-				</div>
-				<div className='flex flex-col items-center mt-2 border-t border-gray-700'>
-					<a
-						className='flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-						href='#'
-					>
-						<svg
-							className='w-6 h-6 stroke-current'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'
-						>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
-							/>
-						</svg>
-					</a>
-					<a
-						className='flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-						href='#'
-					>
-						<svg
-							className='w-6 h-6 stroke-current'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'
-						>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4'
-							/>
-						</svg>
-					</a>
-					<a
-						className='relative flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-						href='#'
-					>
-						<svg
-							className='w-6 h-6 stroke-current'
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'
-						>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								strokeWidth='2'
-								d='M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z'
-							/>
-						</svg>
-						<span className='absolute top-0 left-0 w-2 h-2 mt-2 ml-2 bg-indigo-500 rounded-full'></span>
-					</a>
-				</div>
-				<a
-					className='flex items-center justify-center w-16 h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300'
-					href='#'
-				>
-					<svg
-						className='w-6 h-6 stroke-current'
-						xmlns='http://www.w3.org/2000/svg'
-						fill='none'
-						viewBox='0 0 24 24'
-						stroke='currentColor'
-					>
-						<path
-							strokeLinecap='round'
-							strokeLinejoin='round'
-							strokeWidth='2'
-							d='M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-						/>
-					</svg>
-				</a>
-			</div>
+	const [active, setActive] = useState(false);
+	const controls = useAnimation();
+	const controlText = useAnimation();
+	const controlTitleText = useAnimation();
 
-			<div className='flex flex-col items-center w-40 h-full overflow-hidden text-gray-400 bg-gray-900 rounded'>
-				<a className='flex items-center w-full px-3 mt-3' href='#'>
-					<svg
-						className='w-8 h-8 fill-current'
-						xmlns='http://www.w3.org/2000/svg'
-						viewBox='0 0 20 20'
-						fill='currentColor'
-					>
-						<path d='M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z' />
-					</svg>
-					<span className='ml-2 text-sm font-bold'>The App</span>
-				</a>
-				<div className='w-full px-2'>
-					<div className='flex flex-col items-center w-full mt-3 border-t border-gray-700'>
-						<a
-							className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-							href='#'
-						>
+	console.log("rerender");
+
+	const showMore = () => {
+		controls.start({
+			width: "316px",
+			transition: { duration: 0.003 },
+		});
+		controlText.start({
+			opacity: 1,
+			display: "block",
+			transition: { delay: 0.3 },
+		});
+		controlTitleText.start({
+			opacity: 1,
+			transition: { delay: 0.3 },
+		});
+
+		setActive(true);
+	};
+
+	const showLess = () => {
+		controls.start({
+			width: "110px",
+			transition: { duration: 0.001 },
+		});
+
+		controlText.start({
+			opacity: 0,
+			display: "none",
+		});
+
+		controlTitleText.start({
+			opacity: 0,
+		});
+
+		setActive(false);
+	};
+
+	useEffect(() => {
+		showMore();
+	}, []);
+
+	return (
+		<div className='flex min-h-screen bg-[#111727]/90'>
+			<motion.div
+				animate={controls}
+				className='max-w-[316px] animate duration-300 border-r-2 border-gray-800 relative flex flex-col min-h-screen group'
+			>
+				{active ? (
+					<div className='p-5 flex items-center justify-between h-24 w-full'>
+						<div className='flex items-center gap-2'>
 							<svg
-								className='w-6 h-6 stroke-current'
+								className='w-8 h-8 fill-current text-white'
 								xmlns='http://www.w3.org/2000/svg'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
+								viewBox='0 0 20 20'
+								fill='currentColor'
 							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth='2'
-									d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
-								/>
+								<path d='M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z' />
 							</svg>
-							<span className='ml-2 text-sm font-medium'>Dasboard</span>
-						</a>
-						<a
-							className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-							href='#'
-						>
-							<svg
-								className='w-6 h-6 stroke-current'
-								xmlns='http://www.w3.org/2000/svg'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
-							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth='2'
-									d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
-								/>
-							</svg>
-							<span className='ml-2 text-sm font-medium'>Search</span>
-						</a>
-						<a
-							className='flex items-center w-full h-12 px-3 mt-2 text-gray-200 bg-gray-700 rounded'
-							href='#'
-						>
-							<svg
-								className='w-6 h-6 stroke-current'
-								xmlns='http://www.w3.org/2000/svg'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
-							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth='2'
-									d='M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'
-								/>
-							</svg>
-							<span className='ml-2 text-sm font-medium'>Insights</span>
-						</a>
-						<a
-							className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-							href='#'
-						>
-							<svg
-								className='w-6 h-6 stroke-current'
-								xmlns='http://www.w3.org/2000/svg'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
-							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth='2'
-									d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'
-								/>
-							</svg>
-							<span className='ml-2 text-sm font-medium'>Docs</span>
-						</a>
+							<p className='font-bold text-xl text-white'>LastDoc</p>
+						</div>
+
+						<BsArrowRight
+							className='text-2xl text-white cursor-pointer w-8 h-8 group-hover:block rotate-180 '
+							onClick={showLess}
+						/>
 					</div>
-					<div className='flex flex-col items-center w-full mt-2 border-t border-gray-700'>
-						<a
-							className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-							href='#'
-						>
+				) : (
+					<div className='p-6 flex  items-center justify-between h-24 w-full'>
+						<div className='flex items-center justify-center cursor-pointer' onClick={showMore}>
 							<svg
-								className='w-6 h-6 stroke-current'
+								className='w-8 h-8 fill-current text-white'
 								xmlns='http://www.w3.org/2000/svg'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
+								viewBox='0 0 20 20'
+								fill='currentColor'
 							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth='2'
-									d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
-								/>
+								<path d='M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z' />
 							</svg>
-							<span className='ml-2 text-sm font-medium'>Products</span>
-						</a>
-						<a
-							className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-							href='#'
-						>
-							<svg
-								className='w-6 h-6 stroke-current'
-								xmlns='http://www.w3.org/2000/svg'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
+						</div>
+					</div>
+				)}
+				<div className='w-full px-2'>
+					<div className='flex flex-col w-full mt-2'>
+						{options.map((link, index) => (
+							<div key={index}>
+								<SidebarOption animate={controlText} link={link} />
+							</div>
+						))}
+					</div>
+
+					<div className='flex flex-col w-full mt-2'>
+						{footerOptions.map((link, index) => (
+							<div key={index}>
+								<SidebarOption animate={controlText} link={link} />
+							</div>
+						))}
+					</div>
+
+					<div className='flex gap-2'>
+						<div className='border border-gray-600 rounded-full w-10 h-10 flex items-center justify-center'>
+							<img src='/vite.svg' alt='profile picture' width={30} height={30} />
+						</div>
+						<div>
+							<motion.h1 animate={controlText} className='text-sm font-bold'>
+                Gleb Kotovsky
+							</motion.h1>
+							<motion.p
+								animate={controlText}
+								className='text-xs text-zinc-700 font-medium transition-all duration-150'
 							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth='2'
-									d='M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4'
-								/>
-							</svg>
-							<span className='ml-2 text-sm font-medium'>Settings</span>
-						</a>
-						<a
-							className='relative flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-							href='#'
-						>
-							<svg
-								className='w-6 h-6 stroke-current'
-								xmlns='http://www.w3.org/2000/svg'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
-							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth='2'
-									d='M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z'
-								/>
-							</svg>
-							<span className='ml-2 text-sm font-medium'>Messages</span>
-							<span className='absolute top-0 left-0 w-2 h-2 mt-2 ml-2 bg-indigo-500 rounded-full'></span>
-						</a>
+                UI/UX Designer
+							</motion.p>
+						</div>
 					</div>
 				</div>
-				<a
-					className='flex items-center justify-center w-full h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300'
-					href='#'
-				>
-					<svg
-						className='w-6 h-6 stroke-current'
-						xmlns='http://www.w3.org/2000/svg'
-						fill='none'
-						viewBox='0 0 24 24'
-						stroke='currentColor'
+			</motion.div>
+
+			<motion.div className='animate duration-300 flex-1 flex-col bg-zinc-900  min-h-screen '>
+				<motion.div className='animate duration-300 flex-1 border-b-2 border-zinc-900 bg-black flex flex-col h-24'>
+					<button
+						title='Add link'
+						className='flex items-center justify-center self-end my-auto w-auto px-3 py-2 mr-6 font-bold text-black bg-green-400 rounded-lg'
 					>
-						<path
-							strokeLinecap='round'
-							strokeLinejoin='round'
-							strokeWidth='2'
-							d='M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-						/>
-					</svg>
-					<span className='ml-2 text-sm font-medium'>Account</span>
-				</a>
-			</div>
+						<User className='text-2xl' />
+					</button>
+				</motion.div>
+
+				<motion.div className='animate duration-300 flex-1  bg-zinc-900 '></motion.div>
+			</motion.div>
 		</div>
 	);
 };

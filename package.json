@@ -16,9 +16,11 @@
   "dependencies": {
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
+    "framer-motion": "^9.0.2",
     "lucide-react": "^0.112.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "tailwind-merge": "^1.9.1",
     "tailwindcss-animate": "^1.0.5"
   },
