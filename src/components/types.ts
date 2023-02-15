@@ -5,4 +5,5 @@ export type OptionType = {
   icon?: IconType
   active?: boolean
   rightIcon?: boolean
+  submenu?: OptionType[]
 }
