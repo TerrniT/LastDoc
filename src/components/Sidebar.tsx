@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { User } from "lucide-react";
 import { BsArrowRight } from "react-icons/bs";
 import { AiOutlineHome } from "react-icons/ai";
 import { FiSettings, FiHelpCircle, FiSearch } from "react-icons/fi";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import ProfileDropdown from "./atoms/ProfileDropdown";
 import { OptionType } from "./types";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import SubmenuDropdown from "./atoms/SubmenuDropdown";
 
 const options: OptionType[] = [
@@ -100,14 +99,14 @@ const Sidebar = () => {
 				className='max-w-[316px] duration-300 flex flex-col w-full group'
 			>
 				{!open ? (
-					<div className='p-5 flex items-center justify-between h-24 w-full'>
+					<div className='flex items-center justify-between h-24 w-full px-4'>
 						<div className='flex items-center gap-2'>
 							<img alt='lastdoc logo' src='/logo.png' />
 							<p className='font-bold text-xl text-white'>LastDoc</p>
 						</div>
 
 						<BsArrowRight
-							className='text-2xl text-white cursor-pointer w-6 h-6 group-hover:block rotate-180 '
+							className='text-2xl  text-white cursor-pointer w-6 h-6 group-hover:block rotate-180 '
 							onClick={showLess}
 						/>
 					</div>
@@ -122,13 +121,13 @@ const Sidebar = () => {
 					</div>
 				)}
 
-				<div className='w-full flex flex-col justify-between h-full px-1'>
-					<ul className='pt-2 px-4'>
+				<div className='w-full flex flex-col justify-between h-full mt-6'>
+					<ul className='pt-2 px-5 '>
 						{options.map((menu, index) => (
 							<>
 								<li
 									key={index}
-									className={`text-gray-100 hover:text-white text-sm flex items-center gap-x-4 cursor-pointer p-3 my-1 hover:bg-slate-600 rounded-md ${
+									className={`text-gray-500 hover:text-white text-sm flex items-center gap-x-4 cursor-pointer p-3 my-1 hover:bg-slate-600 rounded-md ${
 										open && "rounded-xl"
 									} ${menu.active && "bg-slate-600 text-white"}`}
 								>
@@ -168,13 +167,13 @@ const Sidebar = () => {
 						))}
 					</ul>
 					<div
-						className={`flex h-20 mb-4 px-3 transition-all ${
-							!open && "bg-slate-600 "
-						}  rounded-2xl bg-transparent `}
+						className={`flex h-20 mb-4 mx-4 transition-all ${
+							!open && "bg-gray-600 "
+						}  bg-transparent rounded-2xl `}
 					>
 						{!open ? (
 							<>
-								<div className='flex px-3 w-full items-center'>
+								<div className='flex px-2 w-full  items-center'>
 									<div className='flex gap-2 '>
 										<img
 											src='/profile.png'
@@ -198,7 +197,7 @@ const Sidebar = () => {
 											</motion.span>
 										</div>
 									</div>
-									<div className='w-10 flex items-center mx-auto justify-center '>
+									<div className='w-10 flex items-center mx-auto justify-center pl-8'>
 										<ProfileDropdown />
 									</div>
 								</div>
@@ -218,19 +217,6 @@ const Sidebar = () => {
 						)}
 					</div>
 				</div>
-			</motion.div>
-
-			<motion.div className='animate duration-300 flex-1 flex-col bg-zinc-900  min-h-screen '>
-				<motion.div className='animate duration-300 flex-1 border-b-2 border-zinc-900 bg-black flex flex-col h-24'>
-					<button
-						title='Add link'
-						className='flex items-center justify-center self-end my-auto w-auto px-3 py-2 mr-6 font-bold text-black bg-green-400 rounded-lg'
-					>
-						<User className='text-2xl' />
-					</button>
-				</motion.div>
-
-				<motion.div className='animate duration-300 flex-1  bg-zinc-900 '></motion.div>
 			</motion.div>
 		</div>
 	);
