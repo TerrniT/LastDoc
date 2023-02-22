@@ -6,6 +6,11 @@ module.exports = {
   content: ["src/**/*.{ts,tsx}", "src/components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        relevant: "#91C561",
+        pending: "#E74A4A",
+        outdated: "#D6A243",
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },

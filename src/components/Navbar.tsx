@@ -14,7 +14,7 @@ const Navbar = ({ role }: Props) => {
 		<motion.div
 			className={`animate duration-300 px-5 flex-1 ${
 				role == "admin" ? "justify-end" : "justify-between"
-			}  bg-white/80 flex h-24 border-b-[1px] border-gray-400`}
+			}  bg-white/80 flex h-14 border-b-[1px] border-gray-400`}
 		>
 			{role == "user" ? (
 				<div className='flex items-center gap-2'>

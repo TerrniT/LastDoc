@@ -6,11 +6,10 @@ import Input from "./atoms/Input";
 
 const Options = () => {
 	return (
-		<div className='flex-1 flex pt-5 px-4 mx-auto justify-between max-w-full'>
+		<div className='flex-1 flex  mx-auto justify-between max-w-full'>
 			<Input icon={SearchIcon} placeholder='Search' />
-			<div className='w-1/4 ml-6 flex justify-around '>
-				<IconButton icon={IoFilter} indicator />
-				<CheckOption />
+			<div className='px-6'>
+				<IconButton icon={IoFilter} indicator outline={true} />
 			</div>
 		</div>
 	);
