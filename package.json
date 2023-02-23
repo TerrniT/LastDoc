@@ -28,6 +28,7 @@
     "tailwindcss-animate": "^1.0.5"
   },
   "devDependencies": {
+    "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@headlessui/react": "^1.7.10",
     "@mui/material": "^5.11.10",
