@@ -8,6 +8,7 @@ import ProfileDropdown from "./atoms/ProfileDropdown"
 import { OptionType } from "./types"
 import { IoIosArrowDown } from "react-icons/io"
 import SubmenuDropdown from "./atoms/SubmenuDropdown"
+import { Link, useNavigate } from "react-router-dom"
 
 const options: OptionType[] = [
   {
@@ -24,10 +25,16 @@ const options: OptionType[] = [
   {
     title: "Dashboard",
     icon: AiOutlineHome,
+    navigate: "/admin",
   },
   {
     title: "Search",
     icon: FiSearch,
+  },
+  {
+    title: "Settings",
+    icon: FiSettings,
+    navigate: "/admin/settings",
   },
 ]
 
@@ -48,6 +55,8 @@ const Sidebar = () => {
   const controls = useAnimation()
   const controlText = useAnimation()
   const controlTitleText = useAnimation()
+
+  const navigate = useNavigate()
 
   console.log("rerender")
 
@@ -125,31 +134,35 @@ const Sidebar = () => {
           <ul className='pt-2 px-5 '>
             {options.map((menu, index) => (
               <>
-                <li
-                  key={index}
-                  className={`text-gray-500 hover:text-white text-sm flex items-center gap-x-4 cursor-pointer p-3 my-1 hover:bg-slate-600 rounded-md ${
-                    open && "rounded-xl"
-                  } ${menu.active && "bg-slate-600 text-white"}`}
-                >
-                  {menu.icon && (
-                    <SubmenuDropdown submenu={menu.submenu} open={open}>
-                      <span className='text-2xl block float-left'>
-                        <menu.icon />
-                      </span>
-                    </SubmenuDropdown>
-                  )}
-                  <span className={`text-base font-medium flex-1 duration-200 ${open && "hidden"}`}>
-                    {menu.title}
-                  </span>
-                  {menu.submenu && (
-                    <IoIosArrowDown
-                      className={`${
-                        submenuOpen && "rotate-180 "
-                      } transition-all duration-100 ease-in-out`}
-                      onClick={() => setSubmenuOpen(!submenuOpen)}
-                    />
-                  )}
-                </li>
+                <Link to={!menu.navigate ? "/*" : menu.navigate}>
+                  <li
+                    key={index}
+                    className={`text-gray-500 hover:text-white text-sm flex items-center gap-x-4 cursor-pointer p-3 my-1 hover:bg-slate-600 rounded-md ${
+                      open && "rounded-xl"
+                    } ${menu.active && "bg-slate-600 text-white"}`}
+                  >
+                    {menu.icon && (
+                      <SubmenuDropdown submenu={menu.submenu} open={open}>
+                        <span className='text-2xl block float-left'>
+                          <menu.icon />
+                        </span>
+                      </SubmenuDropdown>
+                    )}
+                    <span
+                      className={`text-base font-medium flex-1 duration-200 ${open && "hidden"}`}
+                    >
+                      {menu.title}
+                    </span>
+                    {menu.submenu && (
+                      <IoIosArrowDown
+                        className={`${
+                          submenuOpen && "rotate-180 "
+                        } transition-all duration-100 ease-in-out`}
+                        onClick={() => setSubmenuOpen(!submenuOpen)}
+                      />
+                    )}
+                  </li>
+                </Link>
 
                 {!open && menu.submenu && submenuOpen && (
                   <ul className='pt-2'>
@@ -175,13 +188,15 @@ const Sidebar = () => {
               <>
                 <div className='flex px-2 w-full  items-center'>
                   <div className='flex gap-2 '>
-                    <img
-                      src='/profile.png'
-                      alt='profile picture'
-                      className={`rounded-full  h-10 w-10 ${!open && "mx-auto"} ${
-                        !open && "hover:ring-2 hover:ring-indigo-400 hover:cursor-pointer"
-                      } `}
-                    />
+                    <Link to='/admin/profile'>
+                      <img
+                        src='/profile.png'
+                        alt='profile picture'
+                        className={`rounded-full  h-10 w-10 ${!open && "mx-auto"} ${
+                          !open && "hover:ring-2 hover:ring-indigo-400 hover:cursor-pointer"
+                        } `}
+                      />
+                    </Link>
                     <div className='flex flex-col items-center justify-center'>
                       <motion.h1
                         animate={controlText}
@@ -205,13 +220,15 @@ const Sidebar = () => {
             ) : (
               <div className='w-10 flex items-center mx-auto justify-center '>
                 <ProfileDropdown>
-                  <img
-                    src='/profile.png'
-                    alt='profile picture'
-                    className={`rounded-full hover:ring-2 h-10 w-10 self-center ${
-                      !open && "mx-auto"
-                    } hover:ring-indigo-400 hover:cursor-pointer `}
-                  />
+                  <Link to='/admin/profile'>
+                    <img
+                      src='/profile.png'
+                      alt='profile picture'
+                      className={`rounded-full hover:ring-2 h-10 w-10 self-center ${
+                        !open && "mx-auto"
+                      } hover:ring-indigo-400 hover:cursor-pointer `}
+                    />
+                  </Link>
                 </ProfileDropdown>
               </div>
             )}

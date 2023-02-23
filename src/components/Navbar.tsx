@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 
 import { HelpCircleIcon, User } from "lucide-react"
+import { Link } from "react-router-dom"
 import { Button } from "./atoms/button"
 
 type Role = "user" | "admin"
@@ -29,7 +30,7 @@ const Navbar = ({ role }: Props) => {
         </Button>
         {role == "user" ? (
           <Button size={"sm"} variant='default' className='px-6 gap-2 bg-blue-600'>
-            <p>Login</p>
+            <Link to='/login'>Login</Link>
           </Button>
         ) : (
           <Button size={"sm"} variant='outline' className='py-2 px-4 gap-2'>

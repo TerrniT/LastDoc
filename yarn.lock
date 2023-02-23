@@ -694,6 +694,11 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@remix-run/router@1.3.2":
+  "integrity" "sha512-t54ONhl/h75X94SWsHGQ4G/ZrCEguKSRQr7DrjTciJXW0YU1QhlwYeycvK5JgkzlxmvrK7wq1NB/PLtHxoiDcA=="
+  "resolved" "https://registry.npmjs.org/@remix-run/router/-/router-1.3.2.tgz"
+  "version" "1.3.2"
+
 "@swc/core-win32-x64-msvc@1.3.32":
   "integrity" "sha512-DPMoneNFQco7SqmVVOUv1Vn53YmoImEfrAPMY9KrqQzgfzqNTuL2JvfxUqfAxwQ6pEKYAdyKJvZ483rIhgG9XQ=="
   "resolved" "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.3.32.tgz"
@@ -3012,6 +3017,21 @@
   "version" "7.1.2"
   dependencies:
     "lodash" "^4.17.21"
+
+"react-router-dom@^6.8.1":
+  "integrity" "sha512-67EXNfkQgf34P7+PSb6VlBuaacGhkKn3kpE51+P6zYSG2kiRoumXEL6e27zTa9+PGF2MNXbgIUHTVlleLbIcHQ=="
+  "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.8.1.tgz"
+  "version" "6.8.1"
+  dependencies:
+    "@remix-run/router" "1.3.2"
+    "react-router" "6.8.1"
+
+"react-router@6.8.1":
+  "integrity" "sha512-Jgi8BzAJQ8MkPt8ipXnR73rnD7EmZ0HFFb7jdQU24TynGW1Ooqin2KVDN9voSC+7xhqbbCd2cjGUepb6RObnyg=="
+  "resolved" "https://registry.npmjs.org/react-router/-/react-router-6.8.1.tgz"
+  "version" "6.8.1"
+  dependencies:
+    "@remix-run/router" "1.3.2"
 
 "react-smooth@^2.0.1":
   "integrity" "sha512-Own9TA0GPPf3as4vSwFhDouVfXP15ie/wIHklhyKBH5AN6NFtdk0UpHBnonV11BtqDkAWlt40MOUc+5srmW7NA=="
