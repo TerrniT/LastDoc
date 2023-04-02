@@ -3,5 +3,5 @@
 
 #npm run pre-commit &&
 #npx lint-staged pre-commit
-yarn lint:fix
 yarn format
+yarn lint:fix
