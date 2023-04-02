@@ -12,14 +12,7 @@ interface Props {
 }
 
 const Navbar = ({ role }: Props) => {
-	const { logout, login } = useAuth();
-	const navigate = useNavigate();
-
-	const handleSubmit = () => {
-		login().then(() => {
-			navigate("/admin");
-		});
-	};
+	const { logout } = useAuth();
 
 	return (
 		<motion.div

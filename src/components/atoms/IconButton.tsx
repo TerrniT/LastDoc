@@ -4,10 +4,12 @@ interface Props {
   icon: React.ElementType
   indicator: boolean
   outline: boolean
+  onClick?: () => void
 }
 const IconButton = (props: Props) => {
 	return (
 		<button
+			onClick={props.onClick}
 			className={`bg-transparent ${
 				props.outline && "border border-slate-300"
 			} hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100 w-11 h-11 rounded flex items-center justify-center relative`}

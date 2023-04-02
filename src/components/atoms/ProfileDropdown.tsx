@@ -1,4 +1,4 @@
-import React from "react";
+import { useAuth } from "../../hooks/useAuth";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import {
 	DropdownMenu,

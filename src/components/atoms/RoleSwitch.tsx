@@ -5,11 +5,11 @@ import { BsCircleFill } from "react-icons/bs";
 
 const plans = [
 	{
-		name: "Startup",
+		name: "Teacher",
 		ram: "12GB",
 	},
 	{
-		name: "Business",
+		name: "Admin",
 		ram: "16GB",
 	},
 ];
@@ -20,7 +20,7 @@ export default function RoleSwitch() {
 	return (
 		<RadioGroup value={selected} onChange={setSelected} className='mt-10 mb-10 '>
 			<RadioGroup.Label className='text-black'>Select type of your account</RadioGroup.Label>
-			<div className='space-x-2 flex w-full h-28 mt-2'>
+			<div className='space-x-2 flex w-full h-24 mt-2'>
 				{plans.map((plan) => (
 					<RadioGroup.Option
 						key={plan.name}
@@ -32,7 +32,7 @@ export default function RoleSwitch() {
 									: ""
 							} ${
 								checked ? "bg-sky-900 bg-opacity-75 text-white" : "bg-white"
-							} flex-1 w-full cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`
+							} flex-1 w-full cursor-pointer rounded-lg px-5 py-5 shadow-md focus:outline-none`
 						}
 					>
 						{({ active, checked }) => (

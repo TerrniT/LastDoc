@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../components/atoms/button";
 import Logo from "../components/atoms/logo";
 import RoleSwitch from "../components/atoms/RoleSwitch";
@@ -15,6 +15,8 @@ const INITIAL_STATE = {
 const Login = () => {
 	const [passwordShown, setPasswordShown] = useState<boolean>(false);
 	const { login } = useAuth();
+
+	const navigate = useNavigate();
 
 	const [form, setForm] = useState({
 		email: "",
@@ -35,22 +37,22 @@ const Login = () => {
 	const handleSubmit = (event: any) => {
 		event.preventDefault();
 		login(form);
-		console.log(form.email + " " + form.password);
 		setForm(INITIAL_STATE);
+		navigate("/admin");
 	};
 
 	return (
-		<div className="h-screen bg-[url('/public/pattern.svg')] flex items-center">
-			<div className='flex flex-col items-center justify-center mx-auto w-[640px] h-[740px] bg-white rounded-md ring-2'>
-				<div className='  w-[520px]'>
-					<div className='flex  flex-col items-center'>
+		<div className="h-screen bg-[url('/public/pattern.svg')]  flex items-center">
+			<div className='flex flex-col items-center justify-center mx-auto w-[640px]  bg-gray-500 rounded-3xl '>
+				<div className='w-[520px] h-[740px]'>
+					<div className='flex  flex-col items-center mt-6'>
 						<Logo className='w-12 h-12 mb-4' />
 						<h1 className='font-bold text-2xl'>Welcome to LastDoc!</h1>
 					</div>
 					<form onSubmit={handleSubmit}>
 						<div className='w-full flex flex-col'>
 							<label htmlFor='email'>Email</label>
-							<div className='border border-gray-400 p-3 rounded-lg flex items-center justify-between'>
+							<div className='border border-gray-400 rounded-lg flex items-center justify-between'>
 								<input
 									value={form.email}
 									id='email'
@@ -58,7 +60,7 @@ const Login = () => {
 									onChange={handleChange}
 									type='email'
 									placeholder='john@email.com'
-									className='w-full  ring-0 focus:ring-0'
+									className='w-full p-3 ring-0 bg-slate-50 focus:ring-0 rounded-lg'
 								/>
 							</div>
 						</div>
@@ -84,7 +86,13 @@ const Login = () => {
 
 						<RoleSwitch />
 
-						<Button type='submit' variant={"default"} size='default' className='flex gap-2 w-full'>
+						<Button
+							type='submit'
+							onClick={handleSubmit}
+							variant={"default"}
+							size='default'
+							className='flex gap-2 w-full'
+						>
 							<p>Sign In</p>
 							<ArrowRight />
 						</Button>

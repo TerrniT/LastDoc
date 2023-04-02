@@ -12,99 +12,18 @@ import {
 import { SortDesc } from "lucide-react";
 import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
+import { documentList } from "../mock/data";
+import { TypeDocument } from "../types";
 import { Badge } from "./atoms/badge";
 import IconButton from "./atoms/IconButton";
-
-export type Status = "pending" | "relevant" | "outdated"
-
-type Document = {
-  id: number
-  title: {
-    date: string
-    id: string
-  }
-  content: string
-  lastUpdate: {
-    terms: string
-    date: string
-  }
-  status: Status
-}
-
-const documentList: Document[] = [
-	{
-		id: 1,
-		title: {
-			date: "01.02.2021",
-			id: "0001894",
-		},
-		content: "Middle_Backend_Developer",
-		lastUpdate: {
-			terms: "Terms extension",
-			date: "01.02.2021",
-		},
-		status: "outdated",
-	},
-	{
-		id: 2,
-		title: {
-			date: "01.02.2021",
-			id: "0001894",
-		},
-		content: "Junior_Frontend_Developer",
-		lastUpdate: {
-			terms: "Terms extension",
-			date: "01.02.2021",
-		},
-		status: "pending",
-	},
-	{
-		id: 3,
-		title: {
-			date: "01.02.2021",
-			id: "0001894",
-		},
-		content: "Junior_Frontend_Developer",
-		lastUpdate: {
-			terms: "Terms extension",
-			date: "01.02.2021",
-		},
-		status: "relevant",
-	},
-	{
-		id: 4,
-		title: {
-			date: "01.02.2021",
-			id: "0001894",
-		},
-		content: "Junior_Frontend_Developer",
-		lastUpdate: {
-			terms: "Terms extension",
-			date: "01.02.2021",
-		},
-		status: "relevant",
-	},
-	{
-		id: 5,
-		title: {
-			date: "01.02.2021",
-			id: "0001894",
-		},
-		content: "Junior_Frontend_Developer",
-		lastUpdate: {
-			terms: "Terms extension",
-			date: "01.02.2021",
-		},
-		status: "relevant",
-	},
-];
 
 const DocumentTable = () => {
 	const [selectedNames, setSelectedNames] = useState<string[]>([]);
 
 	// TODO: Sort By status
-	const isSalesPersonSelected = (doc: Document) =>
+	const isSalesPersonSelected = (doc: TypeDocument) =>
 		selectedNames.includes(doc.content) || selectedNames.length === 0;
+
 	return (
 		<Card>
 			<MultiSelectBox
@@ -114,7 +33,7 @@ const DocumentTable = () => {
 			>
 				{/* TODO: Sort By status */}
 				{documentList.map((item) => (
-					<MultiSelectBoxItem key={item.id} value={item.content} text={item.content} />
+					<MultiSelectBoxItem key={item.id} value={item.status} text={item.status} />
 				))}
 			</MultiSelectBox>
 			<Table marginTop='mt-6'>
@@ -156,7 +75,12 @@ const DocumentTable = () => {
 									<Badge icon={true} variant={item.status} />
 								</TableCell>
 								<TableCell>
-									<IconButton icon={BsThreeDots} indicator={false} outline={false} />
+									<IconButton
+										onClick={() => console.log(item.content)}
+										icon={BsThreeDots}
+										indicator={false}
+										outline={false}
+									/>
 								</TableCell>
 							</TableRow>
 						))}

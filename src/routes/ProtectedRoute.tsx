@@ -8,7 +8,6 @@ interface Props {
 
 const ProtectedRoute = ({ children }: Props) => {
 	const { user } = useAuth();
-	console.log(user);
 	if (!user) {
 		return <Navigate to='/' />;
 	}
