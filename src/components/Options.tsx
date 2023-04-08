@@ -7,7 +7,7 @@ import Input from "./atoms/Input";
 const Options = () => {
 	return (
 		<div className='flex-1 flex  mx-auto justify-between max-w-full'>
-			<Input icon={SearchIcon} placeholder='Search' />
+			<Input icon={SearchIcon} placeholder='Search' type="text" />
 			<div className='pl-6'>
 				<IconButton icon={IoFilter} indicator outline={true} />
 			</div>

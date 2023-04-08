@@ -1,10 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Button } from "../../components/atoms/button";
 import { useAtom } from "jotai/react";
 import { Fragment } from "react";
 import { modalAtom } from "./state";
 import ModalBody from "./ModalBody";
-
 
 const AddNewDocModal = () => {
 	const [isOpen, setIsOpen] = useAtom(modalAtom);
@@ -44,13 +42,7 @@ const AddNewDocModal = () => {
 									<Dialog.Title as='h3' className='text-lg font-bold leading-6 text-gray-900'>
                     Add new document
 									</Dialog.Title>
-									<ModalBody />
-									<div className='mt-4 flex justify-between gap-2'>
-										<Button onClick={closeModal} variant='outline' className='w-full'>
-                      Close
-										</Button>
-										<Button className='w-full'>Submit</Button>
-									</div>
+									<ModalBody closeModal={closeModal} />
 								</Dialog.Panel>
 							</Transition.Child>
 						</div>

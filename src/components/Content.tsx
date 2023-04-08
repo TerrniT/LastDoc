@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 
 type Props = {
