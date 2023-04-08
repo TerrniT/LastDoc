@@ -16,11 +16,14 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "eslint-plugin-prettier"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "eslint-plugin-prettier", "eslint-plugin-react"],
 
   "settings": {
     "import/resolver": {
       "typescript": {}
+    },
+    "react": {
+      "version": "detect"
     }
   },
   "rules": {

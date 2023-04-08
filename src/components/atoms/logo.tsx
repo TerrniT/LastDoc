@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 
 interface Props {
   className?: string
 }
 
 const logo = ({ className }: Props) => {
-	return <img src='/32x32.svg' className={className ? className : "w-8 h-8"} />;
-};
+  return <img src='/32x32.svg' className={className ? className : "w-8 h-8"} />
+}
 
-export default logo;
+export default logo
