@@ -1,6 +1,6 @@
-import { ChangeEvent, MouseEvent } from "react"
-import { FiX } from "react-icons/fi"
-import { HiDocumentText } from "react-icons/hi"
+import { ChangeEvent, MouseEvent } from "react";
+import { FiX } from "react-icons/fi";
+import { HiDocumentText } from "react-icons/hi";
 
 interface Props {
   setFile: (item: File | null) => void
@@ -9,34 +9,34 @@ interface Props {
 
 const ModalUploader = ({ file, setFile }: Props) => {
   const onFileUploadChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const fileInput = e.target
-    console.log(fileInput.files)
+    const fileInput = e.target;
+    console.log(fileInput.files);
 
     if (!fileInput.files) {
-      alert("No file was chosen")
-      return
+      alert("No file was chosen");
+      return;
     }
 
     if (!fileInput.files || fileInput.files.length === 0) {
-      alert("Files list is empty")
-      return
+      alert("Files list is empty");
+      return;
     }
 
-    const file = fileInput.files[0]
+    const file = fileInput.files[0];
 
     /** Setting file state */
-    setFile(file)
+    setFile(file);
     // we will use the file state, to send it later to the server
 
     /** Reset file input */
-    e.currentTarget.type = "text"
-    e.currentTarget.type = "file"
-  }
+    e.currentTarget.type = "text";
+    e.currentTarget.type = "file";
+  };
 
   const onCancelFile = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    setFile(null)
-  }
+    e.preventDefault();
+    setFile(null);
+  };
 
   return (
     <div className='h-[230px]'>
@@ -92,7 +92,7 @@ const ModalUploader = ({ file, setFile }: Props) => {
         </form>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ModalUploader
+export default ModalUploader;
