@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { Listbox } from "@headlessui/react";
-import { Status } from "./utils/index";
-import { statusList } from "./utils";
+import { useState } from "react"
+import { Listbox } from "@headlessui/react"
+import { Status } from "./utils/index"
+import { statusList } from "./utils"
 
 interface Props {
   setStatus: (item: string) => void
 }
 
 const ModalSelect = ({ setStatus }: Props) => {
-	const [selectedStatus, setSelectedStatus] = useState<Status>(statusList[0]);
+	const [selectedStatus, setSelectedStatus] = useState<Status>(statusList[0])
 
 	const onChange = (e: Status) => {
-		setSelectedStatus(e);
-		setStatus(selectedStatus.title);
-	};
+		setSelectedStatus(e)
+		setStatus(selectedStatus.title)
+	}
 
 	return (
 		<Listbox value={selectedStatus} onChange={(e) => onChange(e)}>
@@ -51,7 +51,7 @@ const ModalSelect = ({ setStatus }: Props) => {
 				))}
 			</Listbox.Options>
 		</Listbox>
-	);
-};
+	)
+}
 
-export default ModalSelect;
+export default ModalSelect

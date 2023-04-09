@@ -1,4 +1,4 @@
-import { atom } from "jotai";
+import { atom } from "jotai"
 
 interface ModalState {
   isOpen: boolean
@@ -6,4 +6,4 @@ interface ModalState {
 
 export const modalAtom = atom<ModalState>({
 	isOpen: false,
-});
+})

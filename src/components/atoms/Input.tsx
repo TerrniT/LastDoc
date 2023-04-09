@@ -1,4 +1,4 @@
-import { IconType } from "react-icons/lib";
+import { IconType } from "react-icons/lib"
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: IconType
@@ -30,7 +30,7 @@ const Input = ({ width, placeholder, value, onChange, ...rest }: Props) => {
 				/>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Input;
+export default Input

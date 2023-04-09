@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "../components/atoms/button";
+import React from "react"
+import { Link } from "react-router-dom"
+import { Button } from "../components/atoms/button"
 
 const NotFound = () => {
 	return (
@@ -16,7 +16,7 @@ const NotFound = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default NotFound;
+export default NotFound

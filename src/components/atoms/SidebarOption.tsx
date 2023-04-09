@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { OptionType } from "../types";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import React, { useState } from "react"
+import { motion } from "framer-motion"
+import { OptionType } from "../types"
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 
 interface OptionProps {
   animate: any
@@ -10,7 +10,7 @@ interface OptionProps {
 }
 
 const SidebarOption = ({ link, animate, active }: OptionProps) => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isOpen, setIsOpen] = useState<boolean>(false)
 
 	return (
 		<div
@@ -56,7 +56,7 @@ const SidebarOption = ({ link, animate, active }: OptionProps) => {
 				</ul>
 			)}
 		</div>
-	);
-};
+	)
+}
 
-export default SidebarOption;
+export default SidebarOption

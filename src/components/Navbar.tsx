@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
-import { HelpCircleIcon, User } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth";
-import { Button } from "./atoms/button";
+import { HelpCircleIcon, User } from "lucide-react"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../hooks/useAuth"
+import { Button } from "./atoms/button"
 
 type Role = "user" | "admin"
 
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Navbar = ({ role }: Props) => {
-	const { logout } = useAuth();
+	const { logout } = useAuth()
 
 	return (
 		<motion.div
@@ -42,7 +42,7 @@ const Navbar = ({ role }: Props) => {
 				)}
 			</div>
 		</motion.div>
-	);
-};
+	)
+}
 
-export default Navbar;
+export default Navbar

@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom";
-import AddNewDocModal from "../components/add-new-doc/AddNewDocModal";
-import Container from "../components/Container";
-import Content from "../components/Content";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import { Outlet } from "react-router-dom"
+import AddNewDocModal from "../components/add-new-doc/AddNewDocModal"
+import Container from "../components/Container"
+import Content from "../components/Content"
+import Navbar from "../components/Navbar"
+import Sidebar from "../components/Sidebar"
 
 export default function AdminLayout() {
 	return (
@@ -13,10 +13,9 @@ export default function AdminLayout() {
 				<Navbar role='admin' />
 				<Container>
 					<Outlet />
-
 					<AddNewDocModal />
 				</Container>
 			</Content>
 		</div>
-	);
+	)
 }

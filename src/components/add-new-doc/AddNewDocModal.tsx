@@ -1,16 +1,15 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { useAtom } from "jotai/react";
-import { Fragment } from "react";
-import { modalAtom } from "./state";
-import ModalBody from "./ModalBody";
+import { Dialog, Transition } from "@headlessui/react"
+import { useAtom } from "jotai/react"
+import { Fragment } from "react"
+import { modalAtom } from "./state"
+import ModalBody from "./ModalBody"
 
 const AddNewDocModal = () => {
-	const [isOpen, setIsOpen] = useAtom(modalAtom);
+	const [isOpen, setIsOpen] = useAtom(modalAtom)
 
 	function closeModal() {
-		setIsOpen({ isOpen: false });
+		setIsOpen({ isOpen: false })
 	}
-
 	return (
 		<>
 			<Transition appear show={isOpen.isOpen} as={Fragment}>
@@ -50,7 +49,7 @@ const AddNewDocModal = () => {
 				</Dialog>
 			</Transition>
 		</>
-	);
-};
+	)
+}
 
-export default AddNewDocModal;
+export default AddNewDocModal

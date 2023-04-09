@@ -36,4 +36,4 @@ export const statusList: Status[] = [
 			b: 74,
 		},
 	},
-];
+]

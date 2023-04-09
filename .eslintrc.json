@@ -16,7 +16,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "eslint-plugin-prettier", "eslint-plugin-react"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "eslint-plugin-prettier", "eslint-plugin-react", "prettier"],
 
   "settings": {
     "import/resolver": {
@@ -33,7 +33,7 @@
     "linebreak-style": ["error", "windows"],
     "quotes": ["error", "double"],
     "semi": "off",
-    "camelcase": "error",
+    "camelcase": "off",
     "spaced-comment": "error",
     "no-duplicate-imports": "error"
   }

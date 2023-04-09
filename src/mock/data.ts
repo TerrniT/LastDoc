@@ -1,4 +1,4 @@
-import { TypeDocument } from "../types";
+import { TypeDocument } from "../types"
 
 export const documentList: TypeDocument[] = [
 	{
@@ -12,7 +12,7 @@ export const documentList: TypeDocument[] = [
 			terms: "Terms extension",
 			date: "01.02.2021",
 		},
-		status: "pending",
+		status: "Pending",
 	},
 	{
 		id: 3,
@@ -25,7 +25,7 @@ export const documentList: TypeDocument[] = [
 			terms: "Terms extension",
 			date: "01.02.2021",
 		},
-		status: "relevant",
+		status: "Relevant",
 	},
 	{
 		id: 4,
@@ -38,7 +38,7 @@ export const documentList: TypeDocument[] = [
 			terms: "Terms extension",
 			date: "01.02.2021",
 		},
-		status: "relevant",
+		status: "Relevant",
 	},
 	{
 		id: 5,
@@ -51,7 +51,7 @@ export const documentList: TypeDocument[] = [
 			terms: "Terms extension",
 			date: "01.02.2021",
 		},
-		status: "relevant",
+		status: "Relevant",
 	},
 
 	{
@@ -65,6 +65,6 @@ export const documentList: TypeDocument[] = [
 			terms: "Terms extension",
 			date: "01.02.2021",
 		},
-		status: "relevant",
+		status: "Relevant",
 	},
-];
+]

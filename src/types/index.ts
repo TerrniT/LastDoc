@@ -12,4 +12,4 @@ export type TypeDocument = {
   status: Status
 }
 
-export type Status = "pending" | "relevant" | "outdated"
+export type Status = "Pending" | "Relevant" | "Outdated"

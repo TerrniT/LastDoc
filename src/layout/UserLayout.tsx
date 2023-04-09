@@ -1,7 +1,7 @@
-import Content from "../components/Content";
-import Navbar from "../components/Navbar";
-import Container from "../components/Container";
-import { Outlet } from "react-router-dom";
+import Content from "../components/Content"
+import Navbar from "../components/Navbar"
+import Container from "../components/Container"
+import { Outlet } from "react-router-dom"
 
 export default function UserLayout() {
 	return (
@@ -13,5 +13,5 @@ export default function UserLayout() {
 				</Container>
 			</Content>
 		</div>
-	);
+	)
 }

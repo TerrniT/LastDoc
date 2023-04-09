@@ -1,8 +1,8 @@
-import { SearchIcon } from "lucide-react";
-import { IoFilter } from "react-icons/io5";
-import { Checkbox } from "./atoms/checkbox";
-import IconButton from "./atoms/IconButton";
-import Input from "./atoms/Input";
+import { SearchIcon } from "lucide-react"
+import { IoFilter } from "react-icons/io5"
+import { Checkbox } from "./atoms/checkbox"
+import IconButton from "./atoms/IconButton"
+import Input from "./atoms/Input"
 
 const Options = () => {
 	return (
@@ -12,10 +12,10 @@ const Options = () => {
 				<IconButton icon={IoFilter} indicator outline={true} />
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Options;
+export default Options
 
 const CheckOption = () => {
 	return (
@@ -23,5 +23,5 @@ const CheckOption = () => {
 			<Checkbox className='text-white rounded' />
 			<p className='whitespace-nowrap text-base'>Hide rejected</p>
 		</div>
-	);
-};
+	)
+}

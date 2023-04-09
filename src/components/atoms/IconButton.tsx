@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 interface Props {
   icon: React.ElementType
@@ -21,7 +21,7 @@ const IconButton = (props: Props) => {
 				</span>
 			)}
 		</button>
-	);
-};
+	)
+}
 
-export default IconButton;
+export default IconButton

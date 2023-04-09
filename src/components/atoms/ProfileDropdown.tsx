@@ -1,5 +1,5 @@
-import { useAuth } from "../../hooks/useAuth";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useAuth } from "../../hooks/useAuth"
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -7,7 +7,7 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "./dropdown";
+} from "./dropdown"
 
 const ProfileDropdown = ({ children }: any) => {
 	return (
@@ -29,7 +29,7 @@ const ProfileDropdown = ({ children }: any) => {
 				<DropdownMenuItem>Log Out</DropdownMenuItem>
 			</DropdownMenuContent>
 		</DropdownMenu>
-	);
-};
+	)
+}
 
-export default ProfileDropdown;
+export default ProfileDropdown

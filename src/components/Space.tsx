@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import DocumentTable from "./DocumentTable";
-import Pagination from "@mui/material/Pagination";
+import React, { useState } from "react"
+import DocumentTable from "./DocumentTable"
+import Pagination from "@mui/material/Pagination"
 
 const Space = () => {
 	return (
@@ -8,7 +8,7 @@ const Space = () => {
 			<DocumentTable />
 			<Pagination count={10} shape='rounded' color={"primary"} />
 		</div>
-	);
-};
+	)
+}
 
-export default Space;
+export default Space

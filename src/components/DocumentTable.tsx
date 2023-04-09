@@ -8,21 +8,28 @@ import {
 	TableBody,
 	MultiSelectBox,
 	MultiSelectBoxItem,
-} from "@tremor/react";
-import { SortDesc } from "lucide-react";
-import { useState } from "react";
-import { BsThreeDots } from "react-icons/bs";
-import { documentList } from "../mock/data";
-import { TypeDocument } from "../types";
-import { Badge } from "./atoms/badge";
-import IconButton from "./atoms/IconButton";
+} from "@tremor/react"
+import { SortDesc } from "lucide-react"
+import { useState } from "react"
+import { BsThreeDots } from "react-icons/bs"
+import { documentList } from "../mock/data"
+import { TypeDocument } from "../types"
+import { Badge } from "./atoms/badge"
+import IconButton from "./atoms/IconButton"
+import { useGetDocumentsQuery } from "../services/DocumentsService"
 
 const DocumentTable = () => {
-	const [selectedNames, setSelectedNames] = useState<string[]>([]);
+	const [selectedNames, setSelectedNames] = useState<string[]>([])
+
+	const { data, error, isLoading } = useGetDocumentsQuery("")
+
+	console.log(data)
+	console.log(error)
+	console.log(isLoading)
 
 	// TODO: Sort By status
 	const isSalesPersonSelected = (doc: TypeDocument) =>
-		selectedNames.includes(doc.content) || selectedNames.length === 0;
+		selectedNames.includes(doc.content) || selectedNames.length === 0
 
 	return (
 		<Card>
@@ -87,7 +94,7 @@ const DocumentTable = () => {
 				</TableBody>
 			</Table>
 		</Card>
-	);
-};
+	)
+}
 
-export default DocumentTable;
+export default DocumentTable

@@ -1,11 +1,11 @@
-import React, { ReactNode } from "react";
-import { OptionType } from "../types";
+import React, { ReactNode } from "react"
+import { OptionType } from "../types"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
-} from "./dropdown";
+} from "./dropdown"
 
 interface SubmenuProps {
   children: ReactNode
@@ -26,7 +26,7 @@ const SubmenuDropdown = ({ children, submenu, open }: SubmenuProps) => {
 				</DropdownMenuContent>
 			)}
 		</DropdownMenu>
-	);
-};
+	)
+}
 
-export default SubmenuDropdown;
+export default SubmenuDropdown

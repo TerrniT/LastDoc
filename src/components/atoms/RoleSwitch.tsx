@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { RadioGroup } from "@headlessui/react";
-import { Circle, CircleDot } from "lucide-react";
-import { BsCircleFill } from "react-icons/bs";
+import { useState } from "react"
+import { RadioGroup } from "@headlessui/react"
+import { Circle, CircleDot } from "lucide-react"
+import { BsCircleFill } from "react-icons/bs"
 
 const plans = [
 	{
@@ -12,10 +12,10 @@ const plans = [
 		name: "Admin",
 		ram: "16GB",
 	},
-];
+]
 
 export default function RoleSwitch() {
-	const [selected, setSelected] = useState(plans[0]);
+	const [selected, setSelected] = useState(plans[0])
 
 	return (
 		<RadioGroup value={selected} onChange={setSelected} className='mt-10 mb-10 '>
@@ -68,7 +68,7 @@ export default function RoleSwitch() {
 				))}
 			</div>
 		</RadioGroup>
-	);
+	)
 }
 
 function CheckIcon(props: any) {
@@ -83,5 +83,5 @@ function CheckIcon(props: any) {
 				strokeLinejoin='round'
 			/>
 		</svg>
-	);
+	)
 }

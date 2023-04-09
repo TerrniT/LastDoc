@@ -1,45 +1,45 @@
-import { ArrowRight } from "lucide-react";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../components/atoms/button";
-import Logo from "../components/atoms/logo";
-import RoleSwitch from "../components/atoms/RoleSwitch";
-import { useState } from "react";
-import { useAuth } from "../hooks/useAuth";
+import { ArrowRight } from "lucide-react"
+import { BsEye, BsEyeSlash } from "react-icons/bs"
+import { Link, useNavigate } from "react-router-dom"
+import { Button } from "../components/atoms/button"
+import Logo from "../components/atoms/logo"
+import RoleSwitch from "../components/atoms/RoleSwitch"
+import { useState } from "react"
+import { useAuth } from "../hooks/useAuth"
 
 const INITIAL_STATE = {
 	email: "",
 	password: "",
-};
+}
 
 const Login = () => {
-	const [passwordShown, setPasswordShown] = useState<boolean>(false);
-	const { login } = useAuth();
+	const [passwordShown, setPasswordShown] = useState<boolean>(false)
+	const { login } = useAuth()
 
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 
 	const [form, setForm] = useState({
 		email: "",
 		password: "",
-	});
+	})
 
 	const togglePasswordVisibility = () => {
-		setPasswordShown(passwordShown ? false : true);
-	};
+		setPasswordShown(passwordShown ? false : true)
+	}
 
 	const handleChange = (event: any) => {
 		setForm({
 			...form,
 			[event.target.id]: event.target.value,
-		});
-	};
+		})
+	}
 
 	const handleSubmit = (event: any) => {
-		event.preventDefault();
-		login(form);
-		setForm(INITIAL_STATE);
-		navigate("/admin");
-	};
+		event.preventDefault()
+		login(form)
+		setForm(INITIAL_STATE)
+		navigate("/admin")
+	}
 
 	return (
 		<div className="h-screen bg-[url('/public/pattern.svg')]  flex items-center">
@@ -107,7 +107,7 @@ const Login = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Login;
+export default Login

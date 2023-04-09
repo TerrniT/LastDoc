@@ -1,5 +1,5 @@
-import Space from "../components/Space";
-import Subhead from "../components/Subhead";
+import Space from "../components/Space"
+import Subhead from "../components/Subhead"
 
 export default function Admin() {
 	return (
@@ -7,5 +7,5 @@ export default function Admin() {
 			<Subhead />
 			<Space />
 		</div>
-	);
+	)
 }

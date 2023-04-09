@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { BsArrowRight } from "react-icons/bs";
-import { AiOutlineHome } from "react-icons/ai";
-import { FiSettings, FiHelpCircle, FiSearch } from "react-icons/fi";
-import { HiOutlineDocumentText } from "react-icons/hi";
-import ProfileDropdown from "./atoms/ProfileDropdown";
-import { OptionType } from "./types";
-import { IoIosArrowDown } from "react-icons/io";
-import SubmenuDropdown from "./atoms/SubmenuDropdown";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react"
+import { motion, useAnimation } from "framer-motion"
+import { BsArrowRight } from "react-icons/bs"
+import { AiOutlineHome } from "react-icons/ai"
+import { FiSettings, FiHelpCircle, FiSearch } from "react-icons/fi"
+import { HiOutlineDocumentText } from "react-icons/hi"
+import ProfileDropdown from "./atoms/ProfileDropdown"
+import { OptionType } from "./types"
+import { IoIosArrowDown } from "react-icons/io"
+import SubmenuDropdown from "./atoms/SubmenuDropdown"
+import { Link, useNavigate } from "react-router-dom"
 
 const options: OptionType[] = [
 	{
@@ -36,7 +36,7 @@ const options: OptionType[] = [
 		icon: FiSettings,
 		navigate: "/admin/settings",
 	},
-];
+]
 
 const footerOptions = [
 	{
@@ -47,59 +47,59 @@ const footerOptions = [
 		title: "Settings",
 		icon: FiSettings,
 	},
-];
+]
 
 const Sidebar = () => {
-	const [open, setOpen] = useState<boolean>(true);
-	const [submenuOpen, setSubmenuOpen] = useState<boolean>(false);
-	const controls = useAnimation();
-	const controlText = useAnimation();
-	const controlTitleText = useAnimation();
+	const [open, setOpen] = useState<boolean>(true)
+	const [submenuOpen, setSubmenuOpen] = useState<boolean>(false)
+	const controls = useAnimation()
+	const controlText = useAnimation()
+	const controlTitleText = useAnimation()
 
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 
-	console.log("rerender");
+	console.log("rerender")
 
 	const showMore = () => {
 		controls.start({
 			width: "316px",
 			transition: { duration: 0.003 },
-		});
+		})
 		controlText.start({
 			opacity: 1,
 			display: "block",
 			transition: { duration: 0.8 },
-		});
+		})
 		controlTitleText.start({
 			opacity: 1,
 			display: "block",
 			transition: { duration: 0.8 },
-		});
+		})
 
-		setOpen(false);
-	};
+		setOpen(false)
+	}
 
 	const showLess = () => {
 		controls.start({
 			width: "110px",
 			transition: { duration: 0.004 },
-		});
+		})
 
 		controlText.start({
 			opacity: 0,
 			display: "none",
-		});
+		})
 
 		controlTitleText.start({
 			opacity: 0,
-		});
+		})
 
-		setOpen(true);
-	};
+		setOpen(true)
+	}
 
 	useEffect(() => {
-		showMore();
-	}, []);
+		showMore()
+	}, [])
 
 	return (
 		<div className='flex min-h-screen bg-[#111727]/90'>
@@ -134,9 +134,8 @@ const Sidebar = () => {
 					<ul className='pt-2 px-5 '>
 						{options.map((menu, index) => (
 							<>
-								<Link to={!menu.navigate ? "#" : menu.navigate}>
+								<Link key={String(index) + menu.title} to={!menu.navigate ? "#" : menu.navigate}>
 									<li
-										key={index}
 										className={`text-gray-500 hover:text-white text-sm flex items-center gap-x-4 cursor-pointer p-3 my-1 hover:bg-slate-600 rounded-md ${
 											open && "rounded-xl"
 										} ${menu.active && "bg-slate-600 text-white"}`}
@@ -168,7 +167,7 @@ const Sidebar = () => {
 									<ul className='pt-2'>
 										{menu.submenu.map((subItem, index) => (
 											<li
-												key={index}
+												key={String(index) + subItem.title}
 												className='text-gray-500 hover:text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 px-5 hover:bg-slate-600 rounded-md'
 											>
 												{subItem.title}
@@ -236,7 +235,7 @@ const Sidebar = () => {
 				</div>
 			</motion.div>
 		</div>
-	);
-};
+	)
+}
 
-export default Sidebar;
+export default Sidebar

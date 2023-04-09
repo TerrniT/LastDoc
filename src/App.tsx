@@ -1,9 +1,9 @@
-import "@tremor/react/dist/esm/tremor.css";
-import { Route, Routes, Link } from "react-router-dom";
-import { Login, Profile, User, Admin, NotFound, Settings } from "./pages/index";
-import { AdminLayout, UserLayout } from "./layout";
-import ProtectedRoute from "./routes/ProtectedRoute";
-import { AuthProvider } from "./hooks/useAuth";
+import "@tremor/react/dist/esm/tremor.css"
+import { Route, Routes, Link } from "react-router-dom"
+import { Login, Profile, User, Admin, NotFound, Settings } from "./pages/index"
+import { AdminLayout, UserLayout } from "./layout"
+import ProtectedRoute from "./routes/ProtectedRoute"
+import { AuthProvider } from "./hooks/useAuth"
 
 export default function App() {
 	return (
@@ -28,5 +28,5 @@ export default function App() {
 				<Route path='/login' element={<Login />} />
 			</Routes>
 		</AuthProvider>
-	);
+	)
 }

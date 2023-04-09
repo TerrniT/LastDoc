@@ -16,8 +16,9 @@
   - [x] esilnt-plugin-prettier - solve lint confilcts
 
 - [ ] Add Tests
-  - [ ] Jest or Mocha ?
-- [ ] Create base layer of page
+  - [ ] Unit (Jest )
+
+- [x] Create base layer of page
 
 ### Backend
 - [ ] Connect supabase 
